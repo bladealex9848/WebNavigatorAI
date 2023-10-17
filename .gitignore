@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+*.cache/
+.cache/
+
+# Logs
+*.log
+
+# Directories used by virtual environments
+venv/
+*.venv
+venv.bak/
+.Vagrant/
+
+# Streamlit config and secrets
+.streamlit/secrets.toml
+
+# OpenAI API key
+openai.cfg
+
+# Jupyter notebook checkpoint files
+.ipynb_checkpoints/
+
+# Mac OS
+.DS_Store
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Windows folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
