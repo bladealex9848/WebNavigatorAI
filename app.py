@@ -7,8 +7,7 @@ import openai
 
 # Configuración de Streamlit
 st.set_page_config(
-    page_title="WebNavigatorAI",
-    #layout='wide',  # Establece el layout en "wide" para que el menú esté contraído por defecto
+    page_title="WebNavigatorAI",    
     initial_sidebar_state='collapsed'  # Esto debería funcionar, pero hay un problema en algunas versiones de Streamlit
 )
 
@@ -97,7 +96,19 @@ if consulta:
         consulta_ampliada = f"Consulta: {consulta}\n\nURL del resultado: {url}\n\nDetalles: {texto_limpio}"
         system_message = "You are an expert search assistant who interprets and provides answers based on web search results provided to the user. You don't need to access the web, but you must process the information given to answer clearly and concisely." if selected_language == "English" else "Eres un asistente de búsqueda experto que interpreta y proporciona respuestas basadas en resultados de búsqueda web proporcionados al usuario. No necesitas acceder a la web, pero debes procesar la información dada para responder de manera clara y concisa."
         respuesta_openai = charla_con_openai(consulta_ampliada, [{"role": "system", "content": system_message}, {"role": "user", "content": consulta_ampliada}])
-        st.write(f"**WebNavigatorAI**: {respuesta_openai}")
+        
+        source_word = "Source" if selected_language == "English" else "Fuente"
+        text_to_copy = f"WebNavigatorAI: {respuesta_openai}\n\n{source_word}: {url}" 
+
+        container_md = f"""
+        <div style="background-color:#e6e6e6; padding:15px; border-radius:10px; position:relative;">
+            <b>WebNavigatorAI:</b> {respuesta_openai}<br><br>
+            <b>{source_word}:</b> <a href="{url}" target="_blank">{url}</a>    
+        </div>
+        """
+
+        st.markdown(container_md, unsafe_allow_html=True)
+        
     else:
         error_message = "Sorry, I couldn't find any relevant information for your query." if selected_language == "English" else "Lo siento, no pude encontrar información relevante para tu consulta."
         st.write(f"**WebNavigatorAI**: {error_message}")

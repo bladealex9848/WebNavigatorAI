@@ -1,4 +1,4 @@
-streamlit==1.2.0  # Asegúrate de tener una versión compatible
-requests==2.26.0
-beautifulsoup4==4.10.0
-openai==0.27.0
+streamlit
+requests
+beautifulsoup4
+openai
