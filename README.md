@@ -3,7 +3,7 @@
 
 WebNavigatorAI es un asistente virtual especializado en búsquedas de Internet. A través de la combinación de navegación web y la potencia de la inteligencia artificial, busca y presenta información relevante de manera rápida y precisa.
 
-![Imagen de WebNavigatorAI](ruta_a_una_imagen_promocional_si_tienes_una.png)
+![Imagen de WebNavigatorAI](https://gpmanagementlegaltech.com/Litigios/agentes_ia/DALL%C2%B7E%202023-10-16%2020.59.49%20-%20Ilustraci%C3%B3n%20de%20un%20logo%20para%20'WebNavigatorAI'.%20Visualmente,%20combina%20una%20lupa%20y%20una%20red%20neuronal.%20La%20lupa%20tiene%20un%20mango%20oscuro%20y%20el%20cristal%20muestra%20con.png)
 
 ## 🌟 Características Principales
 
@@ -16,7 +16,7 @@ WebNavigatorAI es un asistente virtual especializado en búsquedas de Internet. 
 1. Clona este repositorio:
 
 ```bash
-git clone https://github.com/tu_usuario/tu_repositorio.git
+git clone https://github.com/bladealex9848/WebNavigatorAI.git
 ```
 
 2. Instala las dependencias necesarias usando pip:
