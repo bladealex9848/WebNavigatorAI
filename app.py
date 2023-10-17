@@ -98,8 +98,7 @@ if consulta:
         respuesta_openai = charla_con_openai(consulta_ampliada, [{"role": "system", "content": system_message}, {"role": "user", "content": consulta_ampliada}])
         
         source_word = "Source" if selected_language == "English" else "Fuente"
-        text_to_copy = f"WebNavigatorAI: {respuesta_openai}\n\n{source_word}: {url}" 
-
+        
         container_md = f"""
         <div style="background-color:#e6e6e6; padding:15px; border-radius:10px; position:relative;">
             <b>WebNavigatorAI:</b> {respuesta_openai}<br><br>
@@ -110,8 +109,25 @@ if consulta:
         st.markdown(container_md, unsafe_allow_html=True)
         
     else:
-        error_message = "Sorry, I couldn't find any relevant information for your query." if selected_language == "English" else "Lo siento, no pude encontrar información relevante para tu consulta."
-        st.write(f"**WebNavigatorAI**: {error_message}")
+        # Definir el mensaje del sistema y la consulta para el modelo de IA
+        system_message = ("You are a helpful assistant." if selected_language == "English" 
+                          else "Eres un asistente útil.")
+        consulta_ampliada = consulta
+        
+        # Pasar la consulta al modelo de IA
+        respuesta_openai = charla_con_openai(consulta_ampliada, [{"role": "system", "content": system_message}, {"role": "user", "content": consulta_ampliada}])
+        
+        # Definir la información de la fuente
+        fuente = "OpenAI, modelo: gpt-3.5-turbo"
+        
+        # Mostrar la respuesta del modelo y la información de la fuente
+        container_md = f"""
+<div style="background-color:#e6e6e6; padding:15px; border-radius:10px;">
+    <b>WebNavigatorAI:</b> {respuesta_openai}<br><br>
+    <b>Fuente:</b> {fuente}
+</div>
+"""
+        st.markdown(container_md, unsafe_allow_html=True)
 
 # Footer
 st.sidebar.markdown('---')
