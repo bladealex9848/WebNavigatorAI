@@ -21,6 +21,8 @@ venv.bak/
 
 # OpenAI API key
 openai.cfg
+.streamlit/
+secrets.toml
 
 # Jupyter notebook checkpoint files
 .ipynb_checkpoints/
