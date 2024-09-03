@@ -42,6 +42,12 @@ client = OpenAI(api_key=API_KEY)
 
 # Interfaz de usuario
 st.title("WebNavigatorAI 🌐")
+
+st.write("""
+    [![ver código fuente](https://img.shields.io/badge/Repositorio%20GitHub-gris?logo=github)](https://github.com/bladealex9848/WebNavigatorAI)
+    ![Visitantes](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fwebnavigatorai.streamlit.app&label=Visitantes&labelColor=%235d5d5d&countColor=%231e7ebf&style=flat)
+    """)
+
 st.write("Tu asistente virtual especializado en búsquedas de Internet.")
 
 consulta = st.text_input("¿Qué deseas buscar hoy?")
